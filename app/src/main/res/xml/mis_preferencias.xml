@@ -1,0 +1,46 @@
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <PreferenceCategory android:title="Juego">
+
+        <ListPreference
+            android:entries="@array/dificultades"
+            android:entryValues="@array/dificultades"
+            android:key="dificultad"
+            android:summary="%s"
+            android:title="Dificultad elegida"
+            app:useSimpleSummaryProvider="true" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/grupo_bd">
+        <SwitchPreference
+            android:defaultValue="false"
+            android:icon="@drawable/ic_bd"
+            android:key="bd"
+            android:summaryOff="@string/preference_bd_off"
+            android:summaryOn="@string/preference_bd_on"
+            android:title="@string/bd_preferencia" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/pref_serv_externo"
+        android:dependency="bd">
+        <EditTextPreference
+            android:defaultValue="miBD"
+            android:icon="@drawable/ic_lapiz"
+            android:key="nombre"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:title="@string/pref_1" />
+        <EditTextPreference
+            android:defaultValue="10.0.2.2"
+            android:icon="@drawable/ic_url"
+            android:key="ip"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:title="@string/pref_2" />
+    </PreferenceCategory>
+    <Preference
+        android:layout="@layout/comentario"
+        android:title="Preferencia Personalizada" />
+
+
+</PreferenceScreen>
